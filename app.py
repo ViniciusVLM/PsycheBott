@@ -12,13 +12,19 @@ load_dotenv()
 app = Flask(__name__)
 
 # Configuração do Gemini
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+api_key = os.getenv("GEMINI_API_KEY")
+if api_key:
+    genai.configure(api_key=api_key)
 
 def enviar_email(destinatario, conteudo_html):
     smtp_server = "smtp.gmail.com"
     smtp_port = 587
     remetente = os.getenv("EMAIL_REMETENTE")
     senha = os.getenv("EMAIL_SENHA")
+
+    if not remetente or not senha:
+        print("Erro: EMAIL_REMETENTE ou EMAIL_SENHA não configurados.")
+        return False
 
     mensagem = MIMEMultipart()
     mensagem['From'] = remetente
@@ -40,49 +46,68 @@ def enviar_email(destinatario, conteudo_html):
 @app.route('/', methods=['GET', 'POST'])
 def index():
     analise_html = None
-    
+
     if request.method == 'POST':
-        # Capturando os dados (Certifique-se que o 'name' no HTML seja igual a estes)
-        p1 = request.form.get('p1', '')
-        p2 = request.form.get('p2', '')
-        q1 = request.form.get('q1', 'N/A')
-        q2 = request.form.get('q2', 'N/A')
-        q3 = request.form.get('q3', 'N/A')
-        trajetoria = request.form.get('trajetoria', '')
-        email_usuario = request.form.get('email') # Ajustado para bater com o HTML
-
-        # Melhorando o Prompt para focar em profissionais de TI e prevenção de Burnout
-        prompt = f"""
-        Atue como um psicólogo organizacional especializado em saúde mental de profissionais de tecnologia e prevenção de Burnout.
-        Analise as seguintes respostas de um profissional da área tech em relação ao seu ambiente de trabalho e estresse:
-        - Lida com pressão e prazos: {p1}
-        - Visão sobre trabalho em equipe: {p2}
-        - Reação ao erro: {q1}
-        - Reação à crítica: {q2}
-        - Autoavaliação de qualidades: {q3}
-        - Trajetória descrita e pontos de melhoria: {trajetoria}
-        
-        Gere um parecer profissional, empático e acolhedor, formatado em tópicos. O parecer deve conter:
-        1. **Perfil Comportamental:** Uma análise do perfil do profissional com base nas respostas.
-        2. **Pontos Fortes:** Qualidades identificadas que ajudam o profissional no dia a dia.
-        3. **Sinais de Alerta:** Pontos nas respostas que podem indicar risco de Burnout, exaustão emocional ou síndrome do impostor (caso existam).
-        4. **Sugestões Práticas de Autocuidado:** Conselhos e estratégias focadas na área de tecnologia (limites, pausas, comunicação) para proteger a saúde mental.
-        """
-
         try:
-            # Modelo atualizado (gemini-2.5-flash - mais recente e com cota separada)
+            # Capturando os dados do formulário
+            p1 = request.form.get('p1', '')
+            p2 = request.form.get('p2', '')
+            q1 = request.form.get('q1', 'N/A')
+            q2 = request.form.get('q2', 'N/A')
+            q3 = request.form.get('q3', 'N/A')
+            trajetoria = request.form.get('trajetoria', '')
+            email_usuario = request.form.get('email', '')
+
+            # Verifica se a API key está configurada
+            if not api_key:
+                analise_html = "<p style='color:red;'>Erro: GEMINI_API_KEY não está configurada no servidor.</p>"
+                return render_template('index.html', resultado=analise_html)
+
+            # Prompt focado em profissionais de TI e prevenção de Burnout
+            prompt = f"""
+            Atue como um psicólogo organizacional especializado em saúde mental de profissionais de tecnologia e prevenção de Burnout.
+            Analise as seguintes respostas de um profissional da área tech em relação ao seu ambiente de trabalho e estresse:
+            - Lida com pressão e prazos: {p1}
+            - Visão sobre trabalho em equipe: {p2}
+            - Reação ao erro: {q1}
+            - Reação à crítica: {q2}
+            - Autoavaliação de qualidades: {q3}
+            - Trajetória descrita e pontos de melhoria: {trajetoria}
+            
+            Gere um parecer profissional, empático e acolhedor, formatado em tópicos. O parecer deve conter:
+            1. **Perfil Comportamental:** Uma análise do perfil do profissional com base nas respostas.
+            2. **Pontos Fortes:** Qualidades identificadas que ajudam o profissional no dia a dia.
+            3. **Sinais de Alerta:** Pontos nas respostas que podem indicar risco de Burnout, exaustão emocional ou síndrome do impostor (caso existam).
+            4. **Sugestões Práticas de Autocuidado:** Conselhos e estratégias focadas na área de tecnologia (limites, pausas, comunicação) para proteger a saúde mental.
+            """
+
+            # Chamada à API do Gemini
             model = genai.GenerativeModel('gemini-2.5-flash')
             response = model.generate_content(prompt)
-            
-            # Converte a resposta da IA para HTML para exibir no site
-            analise_html = markdown.markdown(response.text)
-            
-            if email_usuario:
+
+            # Extrai o texto da resposta de forma segura
+            texto_resposta = ""
+            try:
+                texto_resposta = response.text
+            except ValueError:
+                # Fallback para modelos "thinking" que podem ter partes diferentes
+                for part in response.candidates[0].content.parts:
+                    if part.text:
+                        texto_resposta += part.text
+
+            if texto_resposta:
+                analise_html = markdown.markdown(texto_resposta)
+            else:
+                analise_html = "<p style='color:red;'>A IA não conseguiu gerar uma resposta. Tente novamente.</p>"
+
+            # Envia por e-mail se o usuário forneceu
+            if email_usuario and analise_html:
                 enviar_email(email_usuario, analise_html)
+
         except Exception as e:
+            print(f"Erro no processamento: {e}")
             analise_html = f"<p style='color:red;'>Erro ao processar análise: {e}</p>"
 
-    # 'resultado' é a variável que o HTML vai procurar
     return render_template('index.html', resultado=analise_html)
 
 if __name__ == '__main__':
