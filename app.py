@@ -1,6 +1,6 @@
 import os
 import markdown
-import threading
+
 from flask import Flask, render_template, request
 import google.generativeai as genai
 from dotenv import load_dotenv
@@ -108,10 +108,9 @@ def index():
             else:
                 analise_html = "<p style='color:orange;'>A IA não conseguiu gerar uma resposta. Tente novamente.</p>"
 
-            # Envia e-mail em thread separada (não bloqueia a resposta ao navegador)
+            # Envia e-mail de forma síncrona
             if email_usuario and analise_html:
-                thread = threading.Thread(target=enviar_email, args=(email_usuario, analise_html))
-                thread.start()
+                enviar_email(email_usuario, analise_html)
 
         except Exception as e:
             print(f"Erro no processamento: {e}")
