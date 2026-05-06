@@ -4,7 +4,7 @@ services:
     runtime: python
     pythonVersion: "3.11.0"
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app
+    startCommand: gunicorn --timeout 120 app:app
     envVars:
       - key: GEMINI_API_KEY
         sync: false
