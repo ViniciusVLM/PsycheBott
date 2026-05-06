@@ -111,7 +111,6 @@ def index():
             # Envia e-mail em thread separada (não bloqueia a resposta ao navegador)
             if email_usuario and analise_html:
                 thread = threading.Thread(target=enviar_email, args=(email_usuario, analise_html))
-                thread.daemon = True
                 thread.start()
 
         except Exception as e:
