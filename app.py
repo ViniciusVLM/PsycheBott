@@ -1,7 +1,6 @@
 import os
 import markdown
-
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, make_response
 import google.generativeai as genai
 from dotenv import load_dotenv
 import smtplib
@@ -18,7 +17,7 @@ if api_key:
     genai.configure(api_key=api_key)
 
 def enviar_email(destinatario, conteudo_html):
-    """Envia e-mail com o parecer. Executado em thread separada."""
+    """Envia e-mail com o parecer."""
     smtp_server = "smtp.gmail.com"
     smtp_port = 587
     remetente = os.getenv("EMAIL_REMETENTE")
@@ -35,7 +34,7 @@ def enviar_email(destinatario, conteudo_html):
     mensagem.attach(MIMEText(conteudo_html, 'html'))
 
     try:
-        server = smtplib.SMTP(smtp_server, smtp_port)
+        server = smtplib.SMTP(smtp_server, smtp_port, timeout=10)
         server.starttls()
         server.login(remetente, senha)
         server.sendmail(remetente, destinatario, mensagem.as_string())
@@ -49,6 +48,7 @@ def enviar_email(destinatario, conteudo_html):
 @app.route('/', methods=['GET', 'POST'])
 def index():
     analise_html = None
+    email_para_enviar = None
 
     if request.method == 'POST':
         try:
@@ -59,7 +59,7 @@ def index():
             q2 = request.form.get('q2', 'N/A')
             q3 = request.form.get('q3', 'N/A')
             trajetoria = request.form.get('trajetoria', '')
-            email_usuario = request.form.get('email', '')
+            email_para_enviar = request.form.get('email', '')
 
             # Verifica se a API key está configurada
             if not api_key:
@@ -95,7 +95,6 @@ def index():
             try:
                 texto_resposta = response.text
             except (ValueError, AttributeError):
-                # Fallback para modelos que retornam partes diferentes
                 try:
                     for part in response.candidates[0].content.parts:
                         if hasattr(part, 'text') and part.text:
@@ -108,15 +107,21 @@ def index():
             else:
                 analise_html = "<p style='color:orange;'>A IA não conseguiu gerar uma resposta. Tente novamente.</p>"
 
-            # Envia e-mail de forma síncrona
-            if email_usuario and analise_html:
-                enviar_email(email_usuario, analise_html)
-
         except Exception as e:
             print(f"Erro no processamento: {e}")
             analise_html = f"<p style='color:red;'>Erro ao processar análise: {e}</p>"
 
-    return render_template('index.html', resultado=analise_html)
+    # Renderiza a página PRIMEIRO, depois envia o e-mail via call_on_close
+    resp = make_response(render_template('index.html', resultado=analise_html))
+
+    if email_para_enviar and analise_html:
+        conteudo = analise_html
+        destino = email_para_enviar
+        @resp.call_on_close
+        def _enviar():
+            enviar_email(destino, conteudo)
+
+    return resp
 
 if __name__ == '__main__':
     app.run(debug=True)
