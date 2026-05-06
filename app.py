@@ -1,5 +1,6 @@
 import os
 import markdown
+import threading
 from flask import Flask, render_template, request
 import google.generativeai as genai
 from dotenv import load_dotenv
@@ -17,6 +18,7 @@ if api_key:
     genai.configure(api_key=api_key)
 
 def enviar_email(destinatario, conteudo_html):
+    """Envia e-mail com o parecer. Executado em thread separada."""
     smtp_server = "smtp.gmail.com"
     smtp_port = 587
     remetente = os.getenv("EMAIL_REMETENTE")
@@ -38,6 +40,7 @@ def enviar_email(destinatario, conteudo_html):
         server.login(remetente, senha)
         server.sendmail(remetente, destinatario, mensagem.as_string())
         server.quit()
+        print(f"E-mail enviado com sucesso para {destinatario}")
         return True
     except Exception as e:
         print(f"Erro ao enviar e-mail: {e}")
@@ -66,7 +69,7 @@ def index():
             # Prompt focado em profissionais de TI e prevenção de Burnout
             prompt = f"""
             Atue como um psicólogo organizacional especializado em saúde mental de profissionais de tecnologia e prevenção de Burnout.
-            Analise as seguintes respostas de um profissional da área tech em relação ao seu ambiente de trabalho e estresse:
+            Analise as seguintes respostas de um profissional da área tech:
             - Lida com pressão e prazos: {p1}
             - Visão sobre trabalho em equipe: {p2}
             - Reação ao erro: {q1}
@@ -79,30 +82,37 @@ def index():
             2. **Pontos Fortes:** Qualidades identificadas que ajudam o profissional no dia a dia.
             3. **Sinais de Alerta:** Pontos nas respostas que podem indicar risco de Burnout, exaustão emocional ou síndrome do impostor (caso existam).
             4. **Sugestões Práticas de Autocuidado:** Conselhos e estratégias focadas na área de tecnologia (limites, pausas, comunicação) para proteger a saúde mental.
+            
+            Seja conciso e direto, com no máximo 500 palavras no total.
             """
 
-            # Chamada à API do Gemini
-            model = genai.GenerativeModel('gemini-2.5-flash')
+            # Chamada à API do Gemini (modelo leve e rápido)
+            model = genai.GenerativeModel('gemini-2.5-flash-lite')
             response = model.generate_content(prompt)
 
             # Extrai o texto da resposta de forma segura
             texto_resposta = ""
             try:
                 texto_resposta = response.text
-            except ValueError:
-                # Fallback para modelos "thinking" que podem ter partes diferentes
-                for part in response.candidates[0].content.parts:
-                    if part.text:
-                        texto_resposta += part.text
+            except (ValueError, AttributeError):
+                # Fallback para modelos que retornam partes diferentes
+                try:
+                    for part in response.candidates[0].content.parts:
+                        if hasattr(part, 'text') and part.text:
+                            texto_resposta += part.text
+                except Exception:
+                    texto_resposta = ""
 
             if texto_resposta:
                 analise_html = markdown.markdown(texto_resposta)
             else:
-                analise_html = "<p style='color:red;'>A IA não conseguiu gerar uma resposta. Tente novamente.</p>"
+                analise_html = "<p style='color:orange;'>A IA não conseguiu gerar uma resposta. Tente novamente.</p>"
 
-            # Envia por e-mail se o usuário forneceu
+            # Envia e-mail em thread separada (não bloqueia a resposta ao navegador)
             if email_usuario and analise_html:
-                enviar_email(email_usuario, analise_html)
+                thread = threading.Thread(target=enviar_email, args=(email_usuario, analise_html))
+                thread.daemon = True
+                thread.start()
 
         except Exception as e:
             print(f"Erro no processamento: {e}")
