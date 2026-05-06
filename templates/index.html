@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Soft Grouchy Cattle</title>
+    <meta property="og:title" content="Soft Grouchy Cattle" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;  -webkit-font-smoothing: antialiased;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;  color: inherit;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}pre {  white-space: normal;}input {  padding: 2px 4px;}img {  display: block;}details {  display: block;  margin: 0;  padding: 0;}summary::-webkit-details-marker {  display: none;}[data-thq="accordion"] [data-thq="accordion-content"] {  max-height: 0;  overflow: hidden;  transition: max-height 0.3s ease-in-out;  padding: 0;}[data-thq="accordion"] details[data-thq="accordion-trigger"][open] + [data-thq="accordion-content"] {  max-height: 1000vh;}details[data-thq="accordion-trigger"][open] summary [data-thq="accordion-icon"] {  transform: rotate(180deg);}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: "Roboto Slab";
+        font-size: 1rem;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: undefined;
+        text-transform: undefined;
+        letter-spacing: 0.02em;
+        line-height: 1.6;
+        color: var(--color-on-surface);
+        background: var(--color-surface);
+
+        fill: var(--color-on-surface);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+  </head>
+  <body>
+    
+    <div>
+    
+
+      <div class="home-container1">
+        <navigation-wrapper class="navigation-wrapper">
+          <!--Navigation component-->
+          <div class="navigation-container1">
+            <div class="navigation-container2">
+              <div class="navigation-container3">
+                <style>
+                  @media (prefers-reduced-motion: reduce) {
+                  .navigation-mobile-overlay.is-open {
+                    animation: none;
+                  }
+                  .navigation-overlay-link:hover {
+                    transform: none;
+                  }
+                  }
+                </style>
+              </div>
+            </div>
+            <nav class="navigation-wrapper">
+              <div class="navigation-container">
+                <a href="Homepage">
+                  <div class="navigation-logo">
+                    <div class="navigation-logo-icon">
+                      <svg
+                        fill="none"
+                        width="32"
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="32"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"
+                        ></path>
+                        <path d="M12 6v6l4 2"></path>
+                      </svg>
+                    </div>
+                    <span class="section-title">PsyTech Agora</span>
+                  </div>
+                </a>
+                <div class="navigation-desktop-menu">
+                  <a href="#estatisticas">
+                    <div class="navigation-link"><span>Estatísticas</span></div>
+                  </a>
+                  <a href="#desafios">
+                    <div class="navigation-link"><span>Desafios</span></div>
+                  </a>
+                  <a href="#estrategias">
+                    <div class="navigation-link"><span>Estratégias</span></div>
+                  </a>
+                  <a href="#recursos">
+                    <div class="navigation-link"><span>Recursos</span></div>
+                  </a>
+                  <a href="#ajuda">
+                    <div class="btn btn-sm btn-primary">
+                      <span>Buscar Ajuda</span>
+                    </div>
+                  </a>
+                </div>
+                <button
+                  id="navToggle"
+                  aria-label="Abrir menu"
+                  aria-expanded="false"
+                  class="navigation-mobile-toggle"
+                >
+                  <svg
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M4 6h16M4 12h16M4 18h16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </nav>
+            <div id="mobileOverlay" class="navigation-mobile-overlay">
+              <div class="navigation-overlay-header">
+                <a href="Homepage">
+                  <div class="navigation-logo">
+                    <span class="section-title">PsyTech Agora</span>
+                  </div>
+                </a>
+                <button
+                  id="navClose"
+                  aria-label="Fechar menu"
+                  class="navigation-mobile-close"
+                >
+                  <svg
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M18 6L6 18M6 6l12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="navigation-overlay-content">
+                <div class="navigation-overlay-links">
+                  <a href="Homepage">
+                    <div class="navigation-overlay-link">
+                      <span>Início</span>
+                    </div>
+                  </a>
+                  <a href="Homepage">
+                    <div class="navigation-overlay-link">
+                      <span>Serviços</span>
+                    </div>
+                  </a>
+                  <a href="Homepage">
+                    <div class="navigation-overlay-link">
+                      <span>Sobre</span>
+                    </div>
+                  </a>
+                  <a href="Homepage">
+                    <div class="navigation-overlay-link"><span>Blog</span></div>
+                  </a>
+                </div>
+                <div class="navigation-overlay-footer">
+                  <a href="Homepage">
+                    <div class="btn btn-lg btn-primary">
+                      <span>Agendar Consulta</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="navigation-container4">
+              <div class="navigation-container5">
+                <style>
+                          @keyframes slideIn {from {transform: translateY(-20px);
+                  opacity: 0;}
+                  to {transform: translateY(0);
+                  opacity: 1;}}
+                </style>
+              </div>
+            </div>
+            <div class="navigation-container6">
+              <div class="navigation-container7">
+                <script defer="" data-name="navigation-logic">
+                  document.addEventListener('DOMContentLoaded', function() {
+                    (function(){
+                      const navToggle = document.getElementById("navToggle")
+                      const navClose = document.getElementById("navClose")
+                      const mobileOverlay = document.getElementById("mobileOverlay")
+                      const overlayLinks = document.querySelectorAll(".navigation-overlay-link")
+
+                      const openMenu = () => {
+                        mobileOverlay.classList.add("is-open")
+                        navToggle.setAttribute("aria-expanded", "true")
+                        document.body.style.overflow = "hidden"
+                      }
+
+                      const closeMenu = () => {
+                        mobileOverlay.classList.remove("is-open")
+                        navToggle.setAttribute("aria-expanded", "false")
+                        document.body.style.overflow = ""
+                      }
+
+                      navToggle.addEventListener("click", openMenu)
+                      navClose.addEventListener("click", closeMenu)
+
+                      overlayLinks.forEach((link) => {
+                        link.addEventListener("click", closeMenu)
+                      })
+
+                      window.addEventListener("keydown", (e) => {
+                        if (e.key === "Escape" && mobileOverlay.classList.contains("is-open")) {
+                          closeMenu()
+                        }
+                      })
+
+                      let lastScroll = 0
+                      const nav = document.querySelector(".navigation-wrapper")
+
+                      window.addEventListener("scroll", () => {
+                        const currentScroll = window.pageYOffset
+
+                        if (currentScroll <= 0) {
+                          nav.style.boxShadow = "none"
+                          return
+                        }
+
+                        if (currentScroll > lastScroll) {
+                          nav.style.transform = "translateY(-100%)"
+                        } else {
+                          nav.style.transform = "translateY(0)"
+                          nav.style.boxShadow = "0 4px 20px rgba(0,0,0,0.05)"
+                        }
+                        lastScroll = currentScroll
+                      })
+                    })()
+                  });
+                </script>
+              </div>
+            </div>
+          </div>
+        </navigation-wrapper>
+        <section class="hero-section">
+          <video
+            src="https://videos.pexels.com/video-files/19808379/19808379-hd_1920_1080_30fps.mp4"
+            loop="true"
+            muted="true"
+            poster="https://images.pexels.com/videos/19808379/pictures/preview-0.jpeg"
+            autoplay="true"
+            playsinline="true"
+            class="hero-video"
+          ></video>
+          <div class="hero-overlay"></div>
+          <div class="hero-container">
+            <div class="hero-content">
+              <h1 class="hero-title home-hero-title">
+                A Saúde Mental dos Profissionais de Tecnologia
+              </h1>
+              <p>
+                <span class="home-text10">Dados científicos revelam:</span>
+                <span>
+                  62% dos profissionais de tech relatam sintomas de burnout.
+                  Entenda os desafios psicológicos únicos da indústria
+                  tecnológica e descubra estratégias baseadas em evidências para
+                  proteger sua saúde mental.
+                </span>
+              </p>
+              <div class="hero-actions">
+                <a href="#estatisticas">
+                  <div class="home-thq-btn-elm1 btn btn-lg btn-primary">
+                    <span>Ver Estatísticas</span>
+                  </div>
+                </a>
+                <a href="#desafios">
+                  <div class="home-thq-btn-elm2 btn btn-lg btn-outline">
+                    <span>Entender Desafios</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="desafios" class="benefits-section">
+          <div class="section-container">
+            <div class="section-header">
+              <h2 class="section-title">
+                Por que a Saúde Mental Importa na Tech
+              </h2>
+              <p class="section-subtitle">
+                Pesquisas científicas demonstram os impactos psicológicos únicos
+                do trabalho em tecnologia e a importância do cuidado preventivo.
+              </p>
+            </div>
+            <div class="benefits-grid">
+              <div class="benefit-card">
+                <div class="benefit-icon-wrapper">
+                  <svg
+                    fill="none"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M12 18V5m3 8a4.17 4.17 0 0 1-3-4a4.17 4.17 0 0 1-3 4m8.598-6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5"
+                    ></path>
+                    <path d="M17.997 5.125a4 4 0 0 1 2.526 5.77"></path>
+                    <path d="M18 18a4 4 0 0 0 2-7.464"></path>
+                    <path
+                      d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517"
+                    ></path>
+                    <path d="M6 18a4 4 0 0 1-2-7.464"></path>
+                    <path d="M6.003 5.125a4 4 0 0 0-2.526 5.77"></path>
+                  </svg>
+                </div>
+                <h3 class="benefit-title">Burnout Epidêmico</h3>
+                <p class="section-content">
+                  Estudo da UC Berkeley (2023): 72% de desenvolvedores
+                  experimentam burnout durante suas carreiras. A natureza do
+                  trabalho tech — prazos apertados, complexidade cognitiva —
+                  cria riscos únicos à saúde mental.
+                </p>
+              </div>
+              <div class="benefit-card">
+                <div class="benefit-icon-wrapper">
+                  <svg
+                    fill="none"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="benefit-title">Isolamento e Trabalho Remoto</h3>
+                <p class="section-content">
+                  Pesquisa do Buffer (2023): 64% de trabalhadores remotos em
+                  tech relatam solidão. O trabalho assíncrono e remoto, embora
+                  flexível, aumenta o risco de isolamento social e depressão.
+                </p>
+              </div>
+              <div class="benefit-card">
+                <div class="benefit-icon-wrapper">
+                  <svg
+                    fill="none"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="m16 18l6-6l-6-6M8 6l-6 6l6 6"></path>
+                  </svg>
+                </div>
+                <h3 class="benefit-title">Síndrome do Impostor</h3>
+                <p class="section-content">
+                  Estudo da Harvard Business Review: 58% de profissionais de
+                  tech sofrem de síndrome do impostor. A rápida evolução
+                  tecnológica e comparação constante exacerbam ansiedade e
+                  autossabotagem.
+                </p>
+              </div>
+              <div class="benefit-card">
+                <div class="benefit-icon-wrapper">
+                  <svg
+                    fill="none"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <g
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M16 3.128a4 4 0 0 1 0 7.744M22 21v-2a4 4 0 0 0-3-3.87"
+                      ></path>
+                      <circle r="4" cx="9" cy="7"></circle>
+                    </g>
+                  </svg>
+                </div>
+                <h3 class="benefit-title">Ansiedade de Performance</h3>
+                <p class="section-content">
+                  Pesquisa da Stack Overflow (2023): 51% de desenvolvedores
+                  relatam ansiedade relacionada a entregas e code reviews. A
+                  cultura de "always on" e métricas agressivas impactam a saúde
+                  psicológica.
+                </p>
+              </div>
+              <div class="benefit-card">
+                <div class="benefit-icon-wrapper">
+                  <svg
+                    fill="none"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <g
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                      <path d="m19 9l-5 5l-4-4l-3 3"></path>
+                    </g>
+                  </svg>
+                </div>
+                <h3 class="benefit-title">Distúrbios do Sono</h3>
+                <p class="section-content">
+                  Estudo da Journal of Occupational Health: 45% de trabalhadores
+                  de tech têm insônia. Exposição à luz azul, horários
+                  irregulares e "vigilância" de sistemas afetam o ciclo
+                  circadiano.
+                </p>
+              </div>
+              <div class="benefit-card">
+                <div class="benefit-icon-wrapper">
+                  <svg
+                    fill="none"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle r="3" cx="12" cy="12"></circle>
+                    <path
+                      d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 0 0-5.63-1.446a3 3 0 0 0-.368 1.571a4 4 0 0 0-2.525 5.771"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="benefit-title">Impacto no Desempenho</h3>
+                <p class="section-content">
+                  WHO estima que depressão e ansiedade custam US$ 1 trilhão/ano
+                  em produtividade perdida. Em tech, problemas mentais reduzem
+                  em 40% a capacidade de resolução de problemas complexos.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="estrategias" class="approach-section">
+          <div class="section-container">
+            <div class="section-header">
+              <h2 class="section-title">Estratégias Baseadas em Evidências</h2>
+              <p class="section-subtitle">
+                Intervenções psicológicas comprovadas cientificamente para
+                proteger a saúde mental de profissionais de tecnologia.
+              </p>
+            </div>
+            <div class="approach-steps">
+              <div class="step-item">
+                <div class="step-number"><span>01</span></div>
+                <div class="step-content">
+                  <h3 class="section-subtitle">
+                    Terapia Cognitivo-Comportamental (TCC)
+                  </h3>
+                  <p class="section-content">
+                    Meta-análise de 269 estudos (Hofmann et al., 2012): TCC é
+                    tão eficaz quanto medicamentos para ansiedade e depressão,
+                    com resultados mais duradouros. Ideal para síndrome do
+                    impostor e burnout em tech.
+                  </p>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-number"><span>02</span></div>
+                <div class="step-content">
+                  <h3 class="section-subtitle">Mindfulness e Meditação</h3>
+                  <p class="section-content">
+                    Estudo da JAMA Internal Medicine (2014): mindfulness reduz
+                    sintomas de ansiedade em 38% e estresse em 31%. Programas de
+                    8 semanas mostram melhora significativa no foco e qualidade
+                    do sono.
+                  </p>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-number"><span>03</span></div>
+                <div class="step-content">
+                  <h3 class="section-subtitle">Limites e Higiene Digital</h3>
+                  <p class="section-content">
+                    Pesquisa da Microsoft (2021): após 4 horas de reuniões
+                    contínuas, níveis de cortisol (hormônio do estresse)
+                    aumentam 37%. Estabelecer limites claros entre trabalho e
+                    descanso é essencial.
+                  </p>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-number"><span>04</span></div>
+                <div class="step-content">
+                  <h3 class="section-subtitle">Conexão Social e Comunidade</h3>
+                  <p class="section-content">
+                    Estudo de 75 anos da Harvard: relações sociais de qualidade
+                    são o melhor preditor de felicidade e saúde. Grupos de apoio
+                    tech reduzem isolamento e normalizam desafios profissionais.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="recursos" class="services-section">
+          <div class="section-container">
+            <div class="section-header">
+              <h2 class="section-title">Recursos Educacionais</h2>
+              <p class="section-subtitle">
+                Conteúdo científico acessível para compreender e proteger sua
+                saúde mental no ambiente tecnológico.
+              </p>
+            </div>
+            <div class="services-grid">
+              <div class="service-card">
+                <h3 class="service-name">Dados e Pesquisas</h3>
+                <p class="section-content">
+                  Compilação de estudos científicos atualizados sobre saúde
+                  mental na indústria de tecnologia global.
+                </p>
+                <a href="https://flashapp.com.br/blog/saude-mental-no-trabalho">
+                  <div class="btn-link"><span>Ver pesquisas</span></div>
+                </a>
+              </div>
+              <div class="service-card">
+                <h3 class="service-name">Guia de Sinais de Alerta</h3>
+                <p class="section-content">
+                  Identifique sintomas precoces de burnout, ansiedade e
+                  depressão específicos ao contexto de trabalho tech.
+                </p>
+                <a href="https://www.mppi.mp.br/internet/wp-content/uploads/2020/09/Ebook_Guia-pra%CC%81tico-sobre-a-Si%CC%81ndrome-de-Burnout-2.pdf">
+                  <div class="btn-link"><span>Baixar guia</span></div>
+                </a>
+              </div>
+              <div class="service-card">
+                <h3 class="service-name">Webinars com Especialistas</h3>
+                <p class="section-content">
+                  Discussões com psicólogos, pesquisadores e profissionais de
+                  tech sobre saúde mental e bem-estar.
+                </p>
+                <a href="https://www.youtube.com/@Vittude">
+                  <div class="btn-link"><span>Ver calendário</span></div>
+                </a>
+              </div>
+              <div class="service-card">
+                <h3 class="service-name">Autoavaliações Validadas</h3>
+                <p class="section-content">
+                  Questionários cientificamente validados (MBI, GAD-7, PHQ-9)
+                  para avaliar níveis de burnout, ansiedade e depressão.
+                </p>
+                <a href="https://clinicamenteecuidado.com.br/testes-psicologicos">
+                  <div class="btn-link"><span>Fazer avaliação</span></div>
+                </a>
+              </div>
+              <div class="service-card">
+                <h3 class="service-name">Diretrizes de Busca por Ajuda</h3>
+                <p class="section-content">
+                  Orientações sobre quando e como buscar apoio profissional:
+                  psicólogos, psiquiatras e recursos de emergência.
+                </p>
+                <a href="https://www.abp.org.br/diretrizes">
+                  <div class="btn-link"><span>Ler mais</span></div>
+                </a>
+              </div>
+              <div class="service-card">
+                <h3 class="service-name">Histórias de Recuperação</h3>
+                <p class="section-content">
+                  Depoimentos anônimos de profissionais de tech que superaram
+                  desafios de saúde mental e suas estratégias.
+                </p>
+                <a href="https://hospitalsantamonica.com.br/um-brilho-de-esperanca-uma-historia-de-superacao/">
+                  <div class="btn-link"><span>Ler histórias</span></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="testimonials-section">
+          <div class="testimonials-rail-wrapper">
+            <div class="testimonials-rail">
+              <div class="testimonial-card">
+                <p class="testimonial-text">
+                  "Os princípios de carga cognitiva mudaram a forma como eu
+                  estruturo meus PRs. Menos bugs, mais clareza."
+                </p>
+                <div class="testimonial-author">
+                  <span class="author-name">Ricardo M.</span>
+                  <span class="author-role">Senior Frontend Engineer</span>
+                </div>
+              </div>
+              <div class="testimonial-card">
+                <p class="testimonial-text">
+                  "Pela primeira vez em 10 anos de carreira, sinto que tenho
+                  controle sobre meu burnout. Essencial para líderes."
+                </p>
+                <div class="testimonial-author">
+                  <span class="author-name">Ana Paula S.</span>
+                  <span class="author-role">Engineering Manager</span>
+                </div>
+              </div>
+              <div class="testimonial-card">
+                <p class="testimonial-text">
+                  "Entender a psicologia por trás das decisões de produto me deu
+                  uma vantagem competitiva enorme."
+                </p>
+                <div class="testimonial-author">
+                  <span class="author-name">Lucas V.</span>
+                  <span class="author-role">Product Designer</span>
+                </div>
+              </div>
+              <div class="testimonial-card">
+                <p class="testimonial-text">
+                  "A meditação focada em lógica me ajudou a resolver problemas
+                  complexos sem perder a paciência."
+                </p>
+                <div class="testimonial-author">
+                  <span class="author-name">Felipe T.</span>
+                  <span class="author-role">Backend Developer</span>
+                </div>
+              </div>
+              <div class="testimonial-card">
+                <p class="testimonial-text">
+                  "A comunicação não-violenta em code reviews reduziu o atrito
+                  na minha equipe em 40%."
+                </p>
+                <div class="testimonial-author">
+                  <span class="author-name">Mariana G.</span>
+                  <span class="author-role">Tech Lead</span>
+                </div>
+              </div>
+              <div class="testimonial-card">
+                <p class="testimonial-text">
+                  "Aplicar psicologia ao meu workflow dobrou meu tempo de Deep
+                  Work diário."
+                </p>
+                <div class="testimonial-author">
+                  <span class="author-name">Gabriel K.</span>
+                  <span class="author-role">Fullstack Developer</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="estatisticas" class="stats-section">
+          <div class="section-container">
+            <div class="section-header">
+              <h2 class="section-title">
+                Estatísticas da Saúde Mental em Tech
+              </h2>
+              <p class="section-subtitle">
+                Dados científicos e pesquisas de instituições renomadas sobre a
+                realidade da saúde mental na indústria tecnológica.
+              </p>
+            </div>
+            <div class="stats-grid">
+              <div class="stat-item">
+                <div class="stat-value"><span>72%</span></div>
+                <p class="section-content">
+                  De desenvolvedores já experimentaram burnout durante a
+                  carreira (UC Berkeley, 2023).
+                </p>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value"><span>58%</span></div>
+                <p class="section-content">
+                  Sofrem de síndrome do impostor, afetando confiança e
+                  performance (Harvard Business Review).
+                </p>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value"><span>51%</span></div>
+                <p class="section-content">
+                  Relatam ansiedade relacionada a entregas e avaliações de
+                  código (Stack Overflow, 2023).
+                </p>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value"><span>64%</span></div>
+                <p class="section-content">
+                  De trabalhadores remotos em tech relatam solidão e isolamento
+                  (Buffer, 2023).
+                </p>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value"><span>45%</span></div>
+                <p class="section-content">
+                  Têm distúrbios do sono relacionados à exposição à luz azul e
+                  horários irregulares (Journal of Occupational Health).
+                </p>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value"><span>US$1T</span></div>
+                <p class="section-content">
+                  Custo global anual em produtividade perdida devido à depressão
+                  e ansiedade (OMS).
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="analise-perfil" class="cta-section" style="background-color: #f4f7f6; padding: 80px 0;">
+          <div class="section-container" style="max-width: 850px; margin: 0 auto; padding: 0 20px;">
+            <div style="background: white; padding: 45px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.08);">
+              <h2 class="section-title" style="text-align: center; margin-bottom: 10px;">Análise Profissional PsycheBot</h2>
+              <p style="text-align: center; color: #666; margin-bottom: 40px; font-family: 'Inter';">
+                Responda às questões abaixo para que nossa IA gere seu relatório de competências.
+              </p>
+
+              <form action="/" method="POST" style="display: flex; flex-direction: column; gap: 30px; text-align: left; font-family: 'Inter';">
+                
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                  <label style="font-weight: 700; color: #333;">Seu E-mail:</label>
+                  <input type="email" name="email" required placeholder="seu@email.com" 
+                        style="padding: 15px; border: 1px solid #ddd; border-radius: 8px;">
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                  <label style="font-weight: 700; color: #333;">Como você lida com situações de pressão ou prazos curtos?</label>
+                  <textarea name="p1" required placeholder="Sua resposta..." rows="3" 
+                            style="padding: 15px; border: 1px solid #ddd; border-radius: 8px; resize: none;"></textarea>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                  <label style="font-weight: 700; color: #333;">O que você considera mais importante para um bom trabalho em equipe?</label>
+                  <textarea name="p2" required placeholder="Sua resposta..." rows="3" 
+                            style="padding: 15px; border: 1px solid #ddd; border-radius: 8px; resize: none;"></textarea>
+                </div>
+
+                <div style="background: #fafafa; padding: 25px; border-radius: 12px;">
+                  <p style="font-weight: 700; margin-bottom: 15px;">1. Quando você comete um erro no trabalho, o que você faz?</p>
+                  <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <label style="cursor: pointer;"><input type="radio" name="q1" value="Assumo e tento corrigir imediatamente" required> A) Assumo e tento corrigir imediatamente</label>
+                    <label style="cursor: pointer;"><input type="radio" name="q1" value="Fico muito mal e me culpo por um tempo"> B) Fico muito mal e me culpo por um tempo</label>
+                    <label style="cursor: pointer;"><input type="radio" name="q1" value="Tento disfarçar ou evitar falar sobre"> C) Tento disfarçar ou evitar falar sobre</label>
+                    <label style="cursor: pointer;"><input type="radio" name="q1" value="Vejo como aprendizado e sigo em frente"> D) Vejo como aprendizado e sigo em frente</label>
+                  </div>
+                </div>
+
+                <div style="background: #fafafa; padding: 25px; border-radius: 12px;">
+                  <p style="font-weight: 700; margin-bottom: 15px;">2. Como você lida com críticas no ambiente de trabalho?</p>
+                  <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <label style="cursor: pointer;"><input type="radio" name="q2" value="Levo como aprendizado" required> A) Levo como aprendizado</label>
+                    <label style="cursor: pointer;"><input type="radio" name="q2" value="Fico chateada, mas reflito depois"> B) Fico chateada, mas reflito depois</label>
+                    <label style="cursor: pointer;"><input type="radio" name="q2" value="Me sinto muito afetada e desmotivada"> C) Me sinto muito afetada e desmotivada</label>
+                    <label style="cursor: pointer;"><input type="radio" name="q2" value="Tento ignorar"> D) Tento ignorar</label>
+                  </div>
+                </div>
+
+                <div style="background: #fafafa; padding: 25px; border-radius: 12px;">
+                  <p style="font-weight: 700; margin-bottom: 15px;">3. Em relação às suas qualidades profissionais, você:</p>
+                  <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <label style="cursor: pointer;"><input type="radio" name="q3" value="Reconheço bem minhas qualidades" required> A) Reconheço bem minhas qualidades</label>
+                    <label style="cursor: pointer;"><input type="radio" name="q3" value="Sei que tenho, mas às vezes esqueço delas"> B) Sei que tenho, mas às vezes esqueço delas</label>
+                    <label style="cursor: pointer;"><input type="radio" name="q3" value="Tenho dificuldade em enxergar minhas qualidades"> C) Tenho dificuldade em enxergar minhas qualidades</label>
+                    <label style="cursor: pointer;"><input type="radio" name="q3" value="Acho que não tenho muitas qualidades"> D) Acho que não tenho muitas qualidades</label>
+                  </div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                  <label style="font-weight: 700; color: #333;">Descreva sua trajetória e pontos a aprimorar:</label>
+                  <textarea name="trajetoria" required placeholder="Fale sobre você como profissional..." rows="5" 
+                            style="padding: 15px; border: 1px solid #ddd; border-radius: 8px; resize: none;"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-lg btn-primary" style="padding: 20px; font-weight: bold; font-size: 18px; cursor: pointer;">
+                  Gerar Parecer com IA
+                </button>
+              </form>
+              {% if resultado %}
+              <div id="resultado-analise" style="margin-top: 40px; padding: 30px; border-top: 2px solid #eee; text-align: left; font-family: 'Inter'; line-height: 1.6; color: #333; background-color: #fcfcfc; border-radius: 10px;">
+                  <h3 style="color: #007bff; margin-bottom: 20px;">Seu Parecer Profissional:</h3>
+                  <div class="conteudo-ia">
+                      {{ resultado | safe }}
+                  </div>
+                  <p style="margin-top: 20px; font-style: italic; font-size: 14px; color: #666;">
+                      *Uma cópia desta análise foi enviada para o seu e-mail.
+                  </p>
+                  <a href="/" style="display: inline-block; margin-top: 20px; color: #007bff; font-weight: bold;">Fazer nova análise</a>
+              </div>
+              
+              <script>
+                  window.onload = function() {
+                      document.getElementById('resultado-analise').scrollIntoView({ behavior: 'smooth' });
+                  };
+              </script>
+      {% endif %}
+            </div>
+          </div>
+        </section>
+        <section id="ajuda" class="contact-section">
+          <div class="section-container">
+            <div class="section-header">
+              <h2 class="section-title">Recursos de Emergência</h2>
+              <p class="section-subtitle">
+                Se você está em crise, não está sozinho. Contatos de apoio
+                imediato disponíveis 24 horas.
+              </p>
+            </div>
+            <div class="contact-rail">
+              <div class="contact-card">
+                <div class="contact-icon">
+                  <svg
+                    fill="none"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect x="2" y="4" rx="2" width="20" height="16"></rect>
+                    <path d="m22 7-8.99 5.73a2 2 0 0 1-2.01 0L2 7"></path>
+                  </svg>
+                </div>
+                <h3 class="section-subtitle">
+                  CVV - Centro de Valorização da Vida
+                </h3>
+                <p class="section-content">
+                  188 - Atendimento gratuito 24h por telefone, chat e email para
+                  apoio emocional e prevenção ao suicídio.
+                </p>
+                <a href="tel:188">
+                  <div class="home-thq-btn-elm5 btn btn-sm btn-link">
+                    <span>Ligar 188</span>
+                  </div>
+                </a>
+              </div>
+              <div class="contact-card">
+                <div class="contact-icon">
+                  <svg
+                    fill="none"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="section-subtitle">Conselho Federal de Psicologia</h3>
+                <p class="section-content">
+                  Busque psicólogos credenciados em sua região. Atendimento
+                  presencial e online disponível.
+                </p>
+                <a href="https://cadastro.cfp.org.br/">
+                  <div class="home-thq-btn-elm6 btn btn-sm btn-link">
+                    <span>Buscar Psicólogo</span>
+                  </div>
+                </a>
+              </div>
+              <div class="contact-card">
+                <div class="contact-icon">
+                  <svg
+                    fill="none"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                    ></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle r="2" cx="4" cy="4"></circle>
+                  </svg>
+                </div>
+                <h3 class="section-subtitle">Setembro Amarelo</h3>
+                <p class="section-content">
+                  Campanha de prevenção ao suicídio com informações, recursos e
+                  eventos de conscientização.
+                </p>
+                <a href="https://www.setembroamarelo.com/">
+                  <div class="home-thq-btn-elm7 btn btn-sm btn-link">
+                    <span>Acessar Site</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="home-container2">
+          <div class="home-container3">
+            <script defer="" data-name="psytech-interactions">
+              document.addEventListener('DOMContentLoaded', function() {
+                (function(){
+                  // Simple intersection observer for scroll reveals
+                  const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: "0px 0px -50px 0px",
+                  }
+
+                  const revealOnScroll = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                      if (entry.isIntersecting) {
+                        entry.target.style.opacity = "1"
+                        entry.target.style.transform = "translateY(0)"
+                        revealOnScroll.unobserve(entry.target)
+                      }
+                    })
+                  }, observerOptions)
+
+                  // Apply initial styles and observe elements
+                  document.querySelectorAll(".benefit-card, .step-item, .service-card, .stat-item").forEach((el) => {
+                    el.style.opacity = "0"
+                    el.style.transform = "translateY(20px)"
+                    el.style.transition = "all 0.5s ease-out"
+                    revealOnScroll.observe(el)
+                  })
+
+                  // Staggered delay for grid items
+                  document.querySelectorAll(".benefits-grid, .services-grid, .stats-grid").forEach((grid) => {
+                    grid.querySelectorAll(":scope > *").forEach((item, index) => {
+                      item.style.transitionDelay = `${index * 100}ms`
+                    })
+                  })
+
+                  // Testimonials Rail Auto-scroll behavior
+                  const rail = document.querySelector(".testimonials-rail-wrapper")
+                  let isDown = false
+                  let startX
+                  let scrollLeft
+
+                  rail.addEventListener("mousedown", (e) => {
+                    isDown = true
+                    rail.classList.add("active")
+                    startX = e.pageX - rail.offsetLeft
+                    scrollLeft = rail.scrollLeft
+                  })
+
+                  rail.addEventListener("mouseleave", () => {
+                    isDown = false
+                  })
+
+                  rail.addEventListener("mouseup", () => {
+                    isDown = false
+                  })
+
+                  rail.addEventListener("mousemove", (e) => {
+                    if (!isDown) return
+                    e.preventDefault()
+                    const x = e.pageX - rail.offsetLeft
+                    const walk = (x - startX) * 2
+                    rail.scrollLeft = scrollLeft - walk
+                  })
+                })()
+              });
+            </script>
+          </div>
+        </div>
+        <footer-wrapper class="footer-wrapper">
+          <!--Footer component-->
+          <div class="footer-container1">
+            <footer class="footer-root">
+              <div class="footer-container">
+                <div class="footer-grid">
+                  <div class="footer-brand-column">
+                    <a href="index.html">
+                      <div class="footer-logo-link">
+                        <div class="footer-logo-icon">
+                          <svg
+                            width="32"
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="32"
+                            viewBox="0 0 24 24"
+                          >
+                            <g
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <path
+                                d="M12 5a3 3 0 1 0-5.997.125a4 4 0 0 0-2.526 5.77a4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"
+                              ></path>
+                              <path
+                                d="M9 13a4.5 4.5 0 0 0 3-4M6.003 5.125A3 3 0 0 0 6.401 6.5m-2.924 4.396a4 4 0 0 1 .585-.396M6 18a4 4 0 0 1-1.967-.516M12 13h4m-4 5h6a2 2 0 0 1 2 2v1M12 8h8m-4 0V5a2 2 0 0 1 2-2"
+                              ></path>
+                              <circle r=".5" cx="16" cy="13"></circle>
+                              <circle r=".5" cx="18" cy="3"></circle>
+                              <circle r=".5" cx="20" cy="21"></circle>
+                              <circle r=".5" cx="20" cy="8"></circle>
+                            </g>
+                          </svg>
+                        </div>
+                        <span class="footer-brand-name section-subtitle">
+                          PsyTech Agora
+                        </span>
+                      </div>
+                    </a>
+                    <p class="section-content footer-description">
+                      A interseção entre saúde mental e alta performance
+                      tecnológica. Apoio psicológico especializado para quem
+                      constrói o futuro digital.
+                    </p>
+                    <div class="footer-social-wrapper">
+                      <a href="https://www.linkedin.com/in/vinicius-lourenço-martins-722287381">
+                        <div aria-label="LinkedIn" class="footer-social-icon">
+                          <svg
+                            width="20"
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="20"
+                            viewBox="0 0 24 24"
+                          >
+                            <g
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <path
+                                d="M8 11v5m0-8v.01M12 16v-5m4 5v-3a2 2 0 1 0-4 0"
+                              ></path>
+                              <path
+                                d="M3 7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"
+                              ></path>
+                            </g>
+                          </svg>
+                        </div>
+                      </a>
+                      <a href="https://github.com/ViniciusVLM">
+                        <div aria-label="GitHub" class="footer-social-icon">
+                          <svg
+                            width="20"
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="20"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="m16 18l6-6l-6-6M8 6l-6 6l6 6"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></path>
+                          </svg>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="footer-links-column">
+                    
+                  <div class="footer-contact-column">
+                    <h3 class="footer-column-title section-subtitle">
+                      Contato
+                    </h3>
+                    <div class="footer-contact-info">
+                      <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                          <svg
+                            width="18"
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="18"
+                            viewBox="0 0 24 24"
+                          >
+                            <g
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <path
+                                d="m22 7l-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+                              ></path>
+                              <rect
+                                x="2"
+                                y="4"
+                                rx="2"
+                                width="20"
+                                height="16"
+                              ></rect>
+                            </g>
+                          </svg>
+                        </div>
+                        <span class="section-content">
+                          psicologiaciee@gmail.com
+                        </span>
+                      </div>
+                      <div class="footer-newsletter-box">
+                        <p class="section-content footer-newsletter-text">
+                          Inscreva-se para insights sobre mente e código.
+                        </p>
+                        <form
+                          action="/subscribe"
+                          method="POST"
+                          data-form-id="1a54f762-aab7-4c59-b9de-c5ad422dd804"
+                          class="footer-newsletter-form"
+                        >
+                          <input
+                            type="email"
+                            id="thq_textinput_Cdm-"
+                            name="textinput"
+                            required="true"
+                            placeholder="Seu e-mail"
+                            data-form-field-id="thq_textinput_Cdm-"
+                            class="footer-input"
+                          />
+                          <button
+                            id="thq_button_upSL"
+                            name="button"
+                            type="submit"
+                            data-form-field-id="thq_button_upSL"
+                            class="btn footer-submit-btn btn-sm btn-primary"
+                          >
+                            <span>Ok</span>
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="footer-bottom">
+                  <div class="footer-divider"></div>
+                  <div class="footer-bottom-content">
+                    <p class="section-content footer-copyright">
+                      &amp;copy; 2026 PsyTech Agora. Todos os direitos
+                      reservados.
+                    </p>
+                    <div class="footer-legal-links">
+                      <a href="#">
+                        <div class="footer-legal-link">
+                          <span>Privacidade</span>
+                        </div>
+                      </a>
+                      <a href="#">
+                        <div class="footer-legal-link">
+                          <span>Termos de Uso</span>
+                        </div>
+                      </a>
+                      <a href="#">
+                        <div class="footer-legal-link">
+                          <span>Cookies</span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </footer>
+            <div class="footer-container2">
+              <div class="footer-container3">
+                <script defer="" data-name="footer-newsletter-handler">
+                  document.addEventListener('DOMContentLoaded', function() {
+                    (function(){
+                      const newsletterForm = document.querySelector(".footer-newsletter-form")
+
+                      if (newsletterForm) {
+                        newsletterForm.addEventListener("submit", function (e) {
+                          // O formulário usa submissão nativa conforme as regras
+                          // Este script apenas adiciona um feedback visual imediato se necessário
+                          const emailInput = this.querySelector(".footer-input")
+                          const submitBtn = this.querySelector(".footer-submit-btn")
+
+                          if (emailInput.checkValidity()) {
+                            submitBtn.style.opacity = "0.7"
+                            submitBtn.innerHTML = "..."
+                          }
+                        })
+                      }
+                    })()
+                  });
+                </script>
+              </div>
+            </div>
+          </div>
+        </footer-wrapper>
+
+      </div>
+      <link
+        rel="canonical"
+        href="https://soft-grouchy-cattle-vscobf.teleporthq.app/"
+      />
+    </div>
+  </body>
+</html>

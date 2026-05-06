@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+.env
+.gemini/
+list_models.py
+node_modules/
