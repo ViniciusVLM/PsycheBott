@@ -4,7 +4,7 @@ import os
 import bleach
 import markdown
 from dotenv import load_dotenv
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from google import genai
 
 load_dotenv()
@@ -56,6 +56,11 @@ def index():
             logger.exception("Falha ao gerar análise com a IA")
             analise_html = "<p>Não foi possível gerar sua análise agora. Tente novamente.</p>"
     return render_template("index.html", resultado=analise_html)
+
+@app.route("/subscribe", methods=["POST"])
+def subscribe():
+    return redirect("/")
+
 
 if __name__ == "__main__":
     debug_mode = os.getenv("FLASK_DEBUG", "false").lower() == "true"
