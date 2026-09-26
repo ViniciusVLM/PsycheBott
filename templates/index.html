@@ -844,7 +844,8 @@
               </form>
               {% if resultado %}
               <div id="resultado-analise" style="margin-top: 40px; padding: 30px; border-top: 2px solid #eee; text-align: left; font-family: 'Inter'; line-height: 1.6; color: #333; background-color: #fcfcfc; border-radius: 10px;">
-                  <h3 style="color: #007bff; margin-bottom: 20px;">Seu Parecer Profissional:</h3>
+                  <h2>Análise gerada por IA ✨</h2>
+                  <p class="aviso-ia"><em>Este é um feedback gerado por inteligência artificial, não um laudo clínico.</em></p>
                   <div class="conteudo-ia">
                       {{ resultado | safe }}
                   </div>
